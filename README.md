@@ -1,5 +1,9 @@
 # Análise de Rentabilidade de Ações
-Este é um exemplo de como realizar uma análise de rentabilidade de ações usando Python e a biblioteca yfinance para obter os dados históricos de uma ação listada na B3. Neste exemplo, estamos usando a ação "IRDM11.SA". O objetivo é plotar um gráfico dos preços de fechamento ajustados ao longo do tempo e calcular a rentabilidade total do período.
+![bolsa-werther-santana-estadao_210320204824](https://github.com/luisfernandogbraga/Analise_diaria_a-oes/assets/134460985/5d5e714f-1408-4fd2-b005-26e162f9b735)
+
+
+
+Exemplo de como realizar uma análise de rentabilidade de ações usando Python e a biblioteca yfinance para obter os dados históricos de uma ação listada na B3. Neste exemplo, estamos usando a ação "IRDM11.SA". O objetivo é plotar um gráfico dos preços de fechamento ajustados ao longo do tempo e calcular a rentabilidade total do período.
 
 # Pré-requisitos
 
@@ -10,7 +14,7 @@ matplotlib
 
 Você pode instalá-las usando o seguinte comando: pip install yfinance pandas matplotlib
 
-Como Usar
+# Como Usar
 Importe as bibliotecas necessárias:
 import yfinance as yf
 import pandas as pd
@@ -50,13 +54,16 @@ plt.annotate(f'Rentabilidade Total do Período: {total_return:.2%}',
 Mostre o gráfico:
 plt.show()
 
-Resultado
+# Resultado
 O código acima irá gerar um gráfico dos preços de fechamento ajustados da ação ao longo do tempo, destacando os valores de preço em intervalos regulares e exibindo a rentabilidade total do período fora do gráfico.
 
 Lembre-se de que este é um exemplo básico e que análises mais aprofundadas podem ser realizadas com técnicas adicionais e considerações sobre dados financeiros.
 
 Sinta-se à vontade para adaptar este exemplo para suas próprias análises de ações e adicionar mais informações relevantes ao README conforme necessário.
 
+<p align="center">
+<img loading="lazy" src="http://img.shields.io/static/v1?label=STATUS&message=FINALIZADO&color=BLUE&style=for-the-badge"/>
+</p>
 
 
 
