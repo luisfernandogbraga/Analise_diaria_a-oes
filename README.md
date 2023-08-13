@@ -65,6 +65,9 @@ Sinta-se à vontade para adaptar este exemplo para suas próprias análises de a
 <img loading="lazy" src="http://img.shields.io/static/v1?label=STATUS&message=FINALIZADO&color=BLUE&style=for-the-badge"/>
 </p>
 
+# AUTOR
+
+[<img loading="height:auto" src="https://avatars.githubusercontent.com/u/134460985?v=4" width=115><br><sub>Luis Fernando </sub>](https://github.com/luisfernandogbraga) 
 
 
 
