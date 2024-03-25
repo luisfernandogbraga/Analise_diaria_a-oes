@@ -1,65 +1,56 @@
-# Análise de Rentabilidade de Ações
+# Análise de Rentabilidade de um Carteira de Ações
 ![bolsa-werther-santana-estadao_210320204824](https://github.com/luisfernandogbraga/Analise_diaria_a-oes/assets/134460985/5d5e714f-1408-4fd2-b005-26e162f9b735)
 
 
 
-Exemplo de como realizar uma análise de rentabilidade de ações usando Python e a biblioteca yfinance para obter os dados históricos de uma ação listada na B3. Neste exemplo, estamos usando a ação "IRDM11.SA". O objetivo é plotar um gráfico dos preços de fechamento ajustados ao longo do tempo e calcular a rentabilidade total do período.
+Este repositório contém um conjunto de arquivos e scripts para realizar a análise de rentabilidade de uma carteira de ações. A análise é realizada em duas etapas principais:
+
+ETL (Extração, Transformação e Carga): Um notebook Jupyter (ETL.ipynb) contendo o processo de extração de dados de uma planilha Excel que representa a carteira de ações, transformação desses dados e atualização dos preços de mercado das ações usando a biblioteca yfinance. O resultado da análise é salvo em um novo arquivo Excel.
+
+Visualização dos Dados: Um segundo notebook Jupyter (GRAFICO.ipynb) que carrega o arquivo Excel gerado anteriormente e gera visualizações gráficas para análise da rentabilidade da carteira.
+
+# Arquivos
+
+ETL.ipynb: Notebook Jupyter contendo o processo de ETL para análise da carteira de ações.
+GRAFICO.ipynb: Notebook Jupyter com visualizações gráficas da rentabilidade da carteira.
 
 # Pré-requisitos
+Antes de executar os scripts, é necessário instalar as seguintes bibliotecas Python:
 
-Certifique-se de ter as seguintes bibliotecas instaladas em seu ambiente Python:
-yfinance
-pandas
-matplotlib
+. pandas
+. yfinance
+. matplotlib
+. seaborn
 
-Você pode instalá-las usando o seguinte comando: pip install yfinance pandas matplotlib
+Você pode instalar essas bibliotecas utilizando o pip:
 
-# Como Usar
-Importe as bibliotecas necessárias:
-import yfinance as yf
-import pandas as pd
-import matplotlib.pyplot as plt
+-- pip install pandas yfinance matplotlib seaborn --
 
-Defina o ticker da ação desejada e o intervalo de datas:
-ticker = "IRDM11.SA"
-start_date = "2023-01-01"
-end_date = "2023-08-10"
+Como Usar
 
-Obtenha os dados históricos da ação usando a biblioteca yfinance:
-data = yf.download(ticker, start=start_date, end=end_date)
+1-Baixe os arquivos ETL.ipynb e GRAFICO.ipynb para o seu ambiente local.
 
-Calcule a rentabilidade diária e total do período:
-data['Daily_Return'] = data['Adj Close'].pct_change()
-total_return = (data['Adj Close'][-1] / data['Adj Close'][0]) - 1
+2-Certifique-se de que todas as dependências estão instaladas.
 
-Plote o gráfico dos preços de fechamento ajustados:
-plt.figure(figsize=(20, 10))
-plt.plot(data['Adj Close'])
-plt.title(f"Preços de Fechamento Ajustados de {ticker}")
-plt.xlabel("Data")
-plt.grid(True)
+3-Abra e execute o notebook ETL.ipynb para realizar a extração, transformação e carga dos dados da PRINCE.xls. OBS: (Para preservar os dados pessoais nãodesponibilizarei o arquivo CARTEIRA) 
+4-Em seguida, execute o notebook GRAFICO.ipynb para visualizar os gráficos de rentabilidade da carteira.
 
-Adicione os valores de preço nas linhas do gráfico:
-spacing = 2
-for index, value in enumerate(data['Adj Close']):
-    if index % spacing == 0:
-        plt.annotate(f'{value:.2f}', (data.index[index], value), textcoords="offset points", xytext=(0,10), ha='left')
+Observações
 
-Exiba a rentabilidade total do período fora do gráfico:
-plt.annotate(f'Rentabilidade Total do Período: {total_return:.2%}',
-             xy=(1, 0), xycoords='axes fraction',
-             xytext=(-10, 10), textcoords='offset points',
-             ha='right', va='bottom')
+Certifique-se de que o arquivo de entrada (PRICE.xlsx) esteja presente e contenha os dados corretos da carteira de ações.
 
-Mostre o gráfico:
-plt.show()
+Os gráficos de rentabilidade serão gerados no notebook GRAFICO.ipynb.
 
-# Resultado
-O código acima irá gerar um gráfico dos preços de fechamento ajustados da ação ao longo do tempo, destacando os valores de preço em intervalos regulares e exibindo a rentabilidade total do período fora do gráfico.
+Contribuições
+Contribuições são bem-vindas! Se você encontrar algum problema ou tiver sugestões para melhorias, sinta-se à vontade para abrir uma issue ou enviar um pull request.
 
-Lembre-se de que este é um exemplo básico e que análises mais aprofundadas podem ser realizadas com técnicas adicionais e considerações sobre dados financeiros.
+Licença
+Este projeto é distribuído sob a licença MIT. Consulte o arquivo LICENSE para obter mais informações.
 
-Sinta-se à vontade para adaptar este exemplo para suas próprias análises de ações e adicionar mais informações relevantes ao README conforme necessário.
+
+
+
+
 
 <p align="center">
 <img loading="lazy" src="http://img.shields.io/static/v1?label=STATUS&message=FINALIZADO&color=BLUE&style=for-the-badge"/>
